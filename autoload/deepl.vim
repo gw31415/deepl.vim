@@ -10,7 +10,7 @@ fu! deepl#translate(text, target_lang) abort
 	en
 	try
 		return json_decode(text)['translations'][0]['text']
-	fina
+	catch
 		th get(json_decode(text), 'message', text)
 	endt
 endfu
