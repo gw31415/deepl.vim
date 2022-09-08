@@ -1,0 +1,44 @@
+*DeepL.vim*                                                         *deepl.vim*
+Author:    Amadeus_vn<git@amas.dev>
+License:   zlib License
+
+|DeepL.vim| provides functions to wrap the DeepL API.
+
+============================================================================
+Functions
+
+deepl#translate({text}, {target_lang})                   *deepl#transllate()*
+
+    Translates {text} to {target_lang} and returns the translation result.
+
+
+============================================================================
+Variables
+
+*g:deepl_auth_key*                   Your Auth Key to access DeepL API.
+                                   (Initially, this variable is not declared.)
+
+*g:deepl_endpoint*                   The Endpoint URL of DeepL API.
+                                   (Default: 'https://api-free.deepl.com/v2/translate')
+
+============================================================================
+Example
+
+In the example below, the command `:{range}DeepL` is created that translates
+the selected lines and adds the translation just below the selection. If the
+command called with a exclamation mark ( `:{range}DeepL!` ), the lines will be
+replaced with the translation.
+>
+    fu! s:deepl(l1, l2, bang) abort
+        let in = join(getline(a:l1, a:l2), "\n")
+        let out = split(deepl#translate(in, 'EN'), "\n")
+        if a:bang == ''
+            cal append(a:l2, out)
+        el
+            cal setline(a:l1, out)
+        en
+    endfu
+    com! -range -bang DeepL cal s:deepl(<line1>, <line2>, '<bang>')
+<
+
+vim:tw=78:ts=8:noet:ft=help:norl:
