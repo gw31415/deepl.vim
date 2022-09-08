@@ -21,6 +21,9 @@ Variables
 *g:deepl_endpoint*                   The Endpoint URL of DeepL API.
                                    (Default: 'https://api-free.deepl.com/v2/translate')
 
+*g:deepl_timeout*                    Maximum time (seconds) allowed for transfer.
+                                   (Default: 2)
+
 ============================================================================
 Example
 
