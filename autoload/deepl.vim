@@ -6,7 +6,7 @@ fu! deepl#translate(text, target_lang) abort
 				\ '-H', 'Authorization: DeepL-Auth-Key ' .. g:deepl_authkey,
 				\ '--data-urlencode', 'text=' .. a:text, '-d', 'target_lang=' .. a:target_lang])
 	if text == ''
-		th 'Your `g:deepl_authkey` is incorrect.'
+		th 'Could not access the endpoint. Please check `g:deepl_authkey` or Internet connection.'
 	en
 	try
 		return json_decode(text)['translations'][0]['text']
