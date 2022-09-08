@@ -1,5 +1,5 @@
 fu! deepl#translate(text, target_lang) abort
-	if g:deepl_authkey == ''
+	if !exists('g:deepl_authkey')
 		th 'You should set your `g:deepl_authkey` first.'
 	en
 	let text = system(['curl', '-X', 'POST', g:deepl_endpoint, '-s',
