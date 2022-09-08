@@ -28,8 +28,10 @@ let g:deepl_auth_key = '{Your auth key of DeepL API}'
 ```
 
 ## Example
-Create a command `:{range}DeepL` that translates the selected lines and adds the translation just below the selection.
-If the command called with a exclamation mark(`:{range}DeepL!`), the lines will be replaced with the translation.
+In the example below, the command `:{range}DeepL` is created that translates
+the selected lines and adds the translation just below the selection. If the
+command called with a exclamation mark ( `:{range}DeepL!` ), the lines will be
+replaced with the translation.
 
 ```vim
 fu! s:deepl(l1, l2, bang) abort
