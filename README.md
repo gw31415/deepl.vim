@@ -36,7 +36,12 @@ replaced with the translation.
 ```vim
 fu! s:deepl(l1, l2, bang) abort
 	let in = join(getline(a:l1, a:l2), "\n")
-	let out = split(deepl#translate(in, 'EN'), "\n")
+	try
+		let out = split(deepl#translate(in, 'EN'), "\n")
+	catch
+		echoh ErrorMsg | ec v:exception | echoh None
+		retu
+	endt
 	if a:bang == ''
 		cal append(a:l2, out)
 	el
