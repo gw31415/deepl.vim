@@ -1,6 +1,6 @@
 # DeepL.vim
 
-Provides functions to wrap the DeepL API.
+Provides functions to wrap the [DeepL API](https://www.deepl.com/en/docs-api/).
 
 ## Installation
 
