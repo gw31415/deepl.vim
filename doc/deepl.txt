@@ -24,9 +24,6 @@ Variables
 *g:deepl_timeout*                    Maximum time (seconds) allowed for transfer.
                                    (Default: 2)
 
-*g:deepl_target_langs*               Table of the langs which are allowed to be
-                                   specified as target_lang.
-
 ============================================================================
 Example
 
