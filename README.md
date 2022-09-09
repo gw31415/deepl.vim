@@ -2,6 +2,9 @@
 
 Provides functions to wrap the [DeepL API](https://www.deepl.com/en/docs-api/).
 
+This plugin provides only simple functions. If you need commands, see
+[gw31415/deepl-commands.nvim](https://github.com/gw31415/deepl-commands.nvim).
+
 ## Installation
 
 ### 1. Installation of this plugin
@@ -50,3 +53,6 @@ fu! s:deepl(l1, l2, bang) abort
 endfu
 com! -range -bang DeepL cal s:deepl(<line1>, <line2>, '<bang>')
 ```
+
+## Related Projects
+- [deepl-commands.nvim](https://github.com/gw31415/deepl-commands.nvim): Provides the DeepL command using this deepl.vim plugin.
