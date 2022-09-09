@@ -4,6 +4,9 @@ License:   zlib License
 
 |DeepL.vim| provides functions to wrap the DeepL API.
 
+This plugin provides only simple functions. If you need commands, see
+https://github.com/gw31415/deepl-commands.nvim.
+
 ============================================================================
 Functions
 
